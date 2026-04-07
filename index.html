@@ -4,112 +4,228 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bar De Fancy</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
 <style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
 body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #0d0d0d;
-  color: white;
+  background:#0a0a0a;
+  color:white;
+  font-family:'Inter', sans-serif;
 }
 
-header {
-  background: linear-gradient(black, #1a1a1a);
-  padding: 60px 20px;
-  text-align: center;
+/* HERO */
+.hero {
+  height:100vh;
+  background:url('https://media.istockphoto.com/id/1061010324/photo/happy-bartender-mixing-drinks-at-the-bar.jpg?s=612x612&w=0&k=20&c=YGIV_rorT23aE0EKhECMCjj_j3FcgelCBUA8Zk3h_hg=') center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+}
+
+.hero::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.7);
+}
+
+.hero-content {
+  position:relative;
+  z-index:2;
 }
 
 h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  margin: 0;
+  font-family:'Playfair Display', serif;
+  font-size:4rem;
+  letter-spacing:2px;
 }
 
 .tagline {
-  opacity: 0.7;
-  margin-top: 10px;
+  margin-top:15px;
+  opacity:0.8;
 }
 
+.btn {
+  margin-top:30px;
+  display:inline-block;
+  padding:14px 30px;
+  background:gold;
+  color:black;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.btn:hover { transform:scale(1.08); }
+
+/* SECTIONS */
 section {
-  padding: 50px 20px;
-  max-width: 1000px;
-  margin: auto;
+  padding:80px 20px;
+  max-width:1100px;
+  margin:auto;
 }
 
-.images {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
+h2 {
+  font-family:'Playfair Display', serif;
+  margin-bottom:20px;
 }
 
-.images img {
-  width: 100%;
-  border-radius: 12px;
+/* GRID */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
 }
 
-.button {
-  display: inline-block;
-  padding: 12px 24px;
-  background: gold;
-  color: black;
-  text-decoration: none;
-  border-radius: 25px;
-  margin-top: 20px;
+/* IMAGE STYLE */
+.card img {
+  width:100%;
+  border-radius:12px;
 }
 
+.card {
+  overflow:hidden;
+  transition:0.3s;
+}
+
+.card:hover {
+  transform:translateY(-8px);
+}
+
+/* GALLERY */
+.gallery img {
+  width:100%;
+  border-radius:12px;
+  transition:0.4s;
+}
+
+.gallery img:hover {
+  transform:scale(1.05);
+}
+
+/* CHAT */
+.chat-box {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:280px;
+  background:#111;
+  border-radius:15px;
+  padding:15px;
+  box-shadow:0 0 20px rgba(255,215,0,0.2);
+}
+
+.chat-box h4 {
+  margin-bottom:10px;
+}
+
+.chat-box input {
+  width:100%;
+  padding:10px;
+  border:none;
+  border-radius:8px;
+  margin-top:10px;
+}
+
+.chat-box button {
+  margin-top:10px;
+  width:100%;
+  padding:10px;
+  background:gold;
+  border:none;
+  border-radius:8px;
+  font-weight:bold;
+}
+
+.chat-response {
+  margin-top:10px;
+  font-size:0.85rem;
+  opacity:0.7;
+}
+
+/* FOOTER */
 footer {
-  text-align: center;
-  padding: 30px;
-  opacity: 0.6;
+  text-align:center;
+  padding:30px;
+  opacity:0.5;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Bar De Fancy</h1>
-  <div class="tagline">Holiday pop-up bar experiences with style ✨</div>
-</header>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <h1>Bar De Fancy</h1>
+    <div class="tagline">Luxury drinks. Holiday magic. ✨</div>
+    <a href="#" class="btn">Book Your Event</a>
+  </div>
+</div>
 
+<!-- ABOUT -->
 <section>
   <h2>About Us</h2>
   <p>
-    Bar De Fancy is a boutique, holiday-inspired mobile bar service run by a dynamic duo bringing elevated cocktails and unforgettable vibes to your events.
-  </p>
-  <p>
-    Whether it's a cozy Christmas gathering, New Year’s Eve party, or private celebration, we create a custom bar experience that feels both fun and luxurious.
+    Bar De Fancy is a boutique holiday bar experience bringing elevated cocktails, curated vibes, and unforgettable moments to every event.
   </p>
 </section>
 
+<!-- EXPERIENCE -->
 <section>
-  <h2>Our Experience</h2>
-  <p>
-    🍸 Custom cocktail menus  
-    🎄 Holiday-themed setups  
-    ✨ Stylish bar design  
-    🎉 Private parties & events  
-  </p>
-</section>
-
-<section>
-  <h2>Gallery</h2>
-  <div class="images">
-    <img src="https://thumbs.dreamstime.com/b/close-up-happy-diverse-friends-eating-pizza-cafe-together-biting-slices-multiracial-people-enjoying-italian-junk-food-150988052.jpg">
-    <img src="https://media.istockphoto.com/id/1061010324/photo/happy-bartender-mixing-drinks-at-the-bar.jpg?s=612x612&w=0&k=20&c=YGIV_rorT23aE0EKhECMCjj_j3FcgelCBUA8Zk3h_hg=">
-    <img src="https://thumbs.dreamstime.com/b/margarita-man-happy-132380.jpg">
+  <h2>What We Bring</h2>
+  <div class="grid">
+    <div class="card"><img src="https://thumbs.dreamstime.com/b/margarita-man-happy-132380.jpg"></div>
+    <div class="card"><img src="https://thumbs.dreamstime.com/b/close-up-happy-diverse-friends-eating-pizza-cafe-together-biting-slices-multiracial-people-enjoying-italian-junk-food-150988052.jpg"></div>
   </div>
 </section>
 
+<!-- HAPPY MOMENTS -->
 <section>
-  <h2>Book Us</h2>
-  <p>Now booking for holiday events and private parties.</p>
-  <a class="button" href="#">Request Booking</a>
+  <h2>Happy Moments</h2>
+  <p>We’ve been part of countless celebrations, parties, and unforgettable nights.</p>
+  <div class="grid">
+    <div class="card"><img src="https://picsum.photos/300/200?random=10"></div>
+    <div class="card"><img src="https://picsum.photos/300/200?random=11"></div>
+    <div class="card"><img src="https://picsum.photos/300/200?random=12"></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section>
+  <h2>Gallery</h2>
+  <div class="grid gallery">
+    <img src="https://picsum.photos/400/300?random=1">
+    <img src="https://picsum.photos/400/300?random=2">
+    <img src="https://picsum.photos/400/300?random=3">
+    <img src="https://picsum.photos/400/300?random=4">
+  </div>
 </section>
 
 <footer>
   © 2026 Bar De Fancy
 </footer>
+
+<!-- CHAT -->
+<div class="chat-box">
+  <h4>Chat with us</h4>
+  <input id="chatInput" placeholder="Ask about booking...">
+  <button onclick="chatReply()">Send</button>
+  <div id="response" class="chat-response"></div>
+</div>
+
+<script>
+function chatReply(){
+  document.getElementById("response").innerText =
+  "Thanks for reaching out! Our team will get back to you shortly.";
+}
+</script>
 
 </body>
 </html>
